@@ -4,6 +4,11 @@ export class Point {
     this.y = y;
   }
 
+  equals(point){
+    // check given point is equal to this point
+    return this.x == point.x && this.y == point.y;
+  }
+
   draw(ctx, size = 18, color = "black") {
     const rad = size / 2;
     ctx.beginPath();
@@ -11,4 +16,6 @@ export class Point {
     ctx.arc(this.x, this.y, rad, 0, Math.PI * 2);
     ctx.fill();
   }
+
+  
 }

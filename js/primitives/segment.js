@@ -4,6 +4,19 @@ export class Segment {
     this.p2 = p2;
   }
 
+  equals(seg) {
+    // return (
+    //   (this.p1.equals(seg.p1) && this.p2.equals(seg.p2)) ||
+    //   (this.p2.equals(seg.p1) && this.p1.equals(seg.p2))
+    // );
+    return this.includes(seg.p1) && this.includes(seg.p2);
+  }
+
+  // helper to check if seg includes a point
+  includes(point) {
+    return this.p1.equals(point) || this.p2.equals(point);
+  }
+
   draw(ctx, width = 2, color = "black") {
     ctx.beginPath();
     ctx.lineWidth = width;
